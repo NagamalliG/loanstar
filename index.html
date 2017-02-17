@@ -2,7 +2,7 @@
 
 <head runat="server">
     <META http-equiv="Content-Type" content="text/html; charset=UTF-16">
-    <title>Automation Test Report</title>
+    <title>SU-Loanstar</title>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
     <script src="scripts/main.js"></script>
     <link rel="stylesheet" type="text/css" href="style/style.css">
@@ -12,55 +12,60 @@
 </head>
 
 <body>
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3 reportMainHeader" width="20%">
-                <span>LONESTAR AUTOMATION-QA</span>
-            </div>
-            <div class="col-sm-6 reportMainHeader1">
-                <span>Regression Automation Test Report</span>
-            </div>
-            <div class="col-sm-3 reportMainHeader2" width="10%">
-                <img class="img-responsive" src="http://www.hustlermoneyblog.com/wp-content/uploads/2015/08/Southwest-Rapid-Rewards.png">
+    <section>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3 reportMainHeader" width="20%">
+                    <span>LONESTAR AUTOMATION-QA</span>
+                </div>
+                <div class="col-sm-6 reportMainHeader1">
+                    <span>Regression Automation Test Report</span>
+                </div>
+                <div class="col-sm-3 reportMainHeader2" width="10%">
+                    <img class="img-responsive" src="http://www.hustlermoneyblog.com/wp-content/uploads/2015/08/Southwest-Rapid-Rewards.png">
+                </div>
             </div>
         </div>
-    </div>
-
+    </section>
     <br>
+    <section>
+        <div class="container-fluid">
+            <div class="row">
 
+                <div ng-app="app" ng-controller="controller">
+                    <div class="col-sm-3" width="20%">
+                        <div>
+                            <label class="control-label"> Country:</label>
+                            <select class='selectid' id="country" ng-model="statessource" ng-options="country for (country, states) in countries" ng-change="GetSelectedCountry()">
+                                 <option value=''>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" width="20%">
+                        <div>
+                            <label class="control-label">States:</label>
+                            <select class='selectid' id="state" ng-disabled="!statessource" ng-model="citiessource" ng-options="state for (state,city) in statessource" ng-change="GetSelectedState()">
+                                <option value=''>Select</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-4" width="20%">
+                        <div>
+                            <label class="control-label">City:</label>
+                            <select class='selectid' id="city" ng-disabled="!citiessource || !statessource" ng-model="city" ng-options="city as city for city  in citiessource" ng-change="GetSelectedState()">
+                                <option value=''>-Select-</option>
+            </select>
+                        </div>
+                    </div>
+                    <div class="col-sm-2" width="20%">
+                        <button type="button" class="btn btn-primary button" ng-click="add();">Add</button>
+                    </div>
 
-
-    <div ng-app="app" ng-controller="controller">
-
-        <div>
-            <label class="control-label">Type</label>
-            <select ng-model="selectedItem" ng-options="item as item.name for item in items">
-      <option value="">Select a type</option>
-    </select>
+                </div>
+            </div>
         </div>
-
-        <div ng-if="selectedItem.options">
-            <label class="control-label">Option</label>
-
-            <select ng-model="selectedOption" ng-options="o as o for o in selectedItem.options">
-    </select>
         </div>
-        <div ng-if="selectedItem.options2">
-            <label class="control-label">Option2</label>
-
-            <select ng-model="selectedOption2" ng-options="o as o for o in selectedItem.options2">
-    </select>
-        </div>
-
-        <div ng-if="selectedItem && !selectedItem.options">
-            <label class="control-label">Comment</label>
-
-            <input type="text" ng-model="selectedItem.comment" />
-        </div>
-
-        <button type="button" class="btn btn-primary" ng-click="add();">Add</button>
-
-    </div>
+    </section>
 </body>
 
 </html>
