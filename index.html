@@ -1,0 +1,66 @@
+<html>
+
+<head runat="server">
+    <META http-equiv="Content-Type" content="text/html; charset=UTF-16">
+    <title>Automation Test Report</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0/angular.min.js"></script>
+    <script src="scripts/main.js"></script>
+    <link rel="stylesheet" type="text/css" href="style/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3 reportMainHeader" width="20%">
+                <span>LONESTAR AUTOMATION-QA</span>
+            </div>
+            <div class="col-sm-6 reportMainHeader1">
+                <span>Regression Automation Test Report</span>
+            </div>
+            <div class="col-sm-3 reportMainHeader2" width="10%">
+                <img class="img-responsive" src="http://www.hustlermoneyblog.com/wp-content/uploads/2015/08/Southwest-Rapid-Rewards.png">
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+
+    <div ng-app="app" ng-controller="controller">
+
+        <div>
+            <label class="control-label">Type</label>
+            <select ng-model="selectedItem" ng-options="item as item.name for item in items">
+      <option value="">Select a type</option>
+    </select>
+        </div>
+
+        <div ng-if="selectedItem.options">
+            <label class="control-label">Option</label>
+
+            <select ng-model="selectedOption" ng-options="o as o for o in selectedItem.options">
+    </select>
+        </div>
+        <div ng-if="selectedItem.options2">
+            <label class="control-label">Option2</label>
+
+            <select ng-model="selectedOption2" ng-options="o as o for o in selectedItem.options2">
+    </select>
+        </div>
+
+        <div ng-if="selectedItem && !selectedItem.options">
+            <label class="control-label">Comment</label>
+
+            <input type="text" ng-model="selectedItem.comment" />
+        </div>
+
+        <button type="button" class="btn btn-primary" ng-click="add();">Add</button>
+
+    </div>
+</body>
+
+</html>
