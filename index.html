@@ -81,20 +81,24 @@
                         <th class="componentTableStepsHeader" width="10%">ExecutionResults</th>
                         <th class="componentTableStepsHeader" width="12%">ExecutionDuration</th>
                     </tr>
-                    <tr ng-repeat="x in names">
+                    <tr id="tableData" ng-repeat="x in names">
                         <td class="componentTableCell">{{ x.scriptID }}</td>
                         <td class="componentTableCell">{{ x.scriptName }}</td>
                         <td class="componentTableCell">{{ x.scriptDescription }}</td>
                         <td class="componentTableCell">{{ x.executionResults }}</td>
                         <td class="componentTableCell">{{ x.executionDuration }}</td>
                     </tr>
-                    <tr>
-                        <td>{{names.nodata}}</td>
-                    </tr>
                 </table>
             </div>
         </div>
     </section>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="nodata">
+                <h5 class="nodataHeading">{{names.nodata}}</h5>
+            </div>
+        </div>
+    </div>
 </body>
 
 </html>

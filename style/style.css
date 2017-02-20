@@ -81,5 +81,10 @@
 }
 
 .nodata {
-    width: 100%;
+    background-color: gray;
+    text-align: center;
+}
+
+.nodataHeading {
+    color: white;
 }

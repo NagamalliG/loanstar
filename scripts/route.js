@@ -43,6 +43,7 @@ app.controller("controller", function($scope, $http) {
                     console.log('response==  ' + JSON.stringify(response));
                     console.log("length===   " + response.length);
                     if (response.length === 0) {
+                        // document.getElementById("tableData").style.display = "none";
                         $scope.names = { nodata: 'there is no data to display...' };
                     } else {
                         $scope.names = response;
