@@ -12,21 +12,23 @@
 </head>
 
 <body ng-app="app" ng-controller="controller">
-    <section>
+    <section class="headerbackground">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-sm-3 reportMainHeader" width="20%">
-                    <span>LONESTAR AUTOMATION-QA</span>
+                    <span>Header1</span>
                 </div>
                 <div class="col-sm-6 reportMainHeader1">
-                    <span>Regression Automation Test Report</span>
+                    <span>Header2</span>
                 </div>
                 <div class="col-sm-3 reportMainHeader2" width="10%">
-                    <img class="img-responsive" src="http://www.hustlermoneyblog.com/wp-content/uploads/2015/08/Southwest-Rapid-Rewards.png">
+                    <img class="img-responsive" src="https://upload.wikimedia.org/wikipedia/en/9/93/IndiGo_Logo.jpg">
                 </div>
             </div>
         </div>
     </section>
+    <br>
+    <br>
     <br>
     <section>
         <div class="container-fluid">
@@ -35,25 +37,25 @@
                 <div>
                     <div class="col-sm-3" width="20%">
                         <div>
-                            <label class="control-label"> Country:</label>
+                           <!-- <label class="control-label"> Country:</label>-->
                             <select class='selectid' id="country" ng-model="country" ng-options="country.name for country in countries track by country._id" ng-change="GetSelectedCountry()">
-                                 <option value=''>-Select Country-</option>
+                                 <option value=''>Country</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-3" width="20%">
                         <div>
-                            <label class="control-label">States:</label>
+                           <!-- <label class="control-label">States:</label>-->
                             <select class='selectid' id="state" ng-disabled="country.length === 0 && states.length === 0" ng-model="state" ng-options="state.name for state in states track by state.id" ng-change="GetSelectedState()">
-                                <option value=''>-Select State-</option>
+                                <option value=''>State</option>
                             </select>
                         </div>
                     </div>
                     <div class="col-sm-4" width="20%">
                         <div>
-                            <label class="control-label">City:</label>
+                          <!--<label class="control-label">City:</label>-->
                             <select class='selectid' id="city" ng-disabled="states.length === 0 && cities.length === 0" ng-model="city" ng-options="city for city  in cities">
-                                <option value=''>-Select City-</option>
+                                <option value=''>City</option>
             </select>
                         </div>
                     </div>
@@ -65,9 +67,12 @@
             </div>
         </div>
     </section>
+    <br>
+    <br>
+    <br>
     <table class="commonTableBorder tableHeading" cellpadding="0" cellspacing="0" width="100%">
         <tr class="indexTableHeaderCell" width="100%">
-            <td width="100%">Script Execution Details</td>
+            <td width="100%">XXXXXXXXXXXXXXXX</td>
         </tr>
     </table>
     <section>
@@ -75,11 +80,11 @@
             <div class="row">
                 <table class="commonTableBorder" width="100%">
                     <tr>
-                        <th class="componentTableStepsHeader" width="10%">ScriptID</th>&nbsp;
-                        <th class="componentTableStepsHeader" width="30%">ScriptName</th>
-                        <th class="componentTableStepsHeader" width="37%">ScriptDescription</th>
-                        <th class="componentTableStepsHeader" width="10%">ExecutionResults</th>
-                        <th class="componentTableStepsHeader" width="12%">ExecutionDuration</th>
+                        <th class="componentTableStepsHeader" width="10%">XXXXXX</th>&nbsp;
+                        <th class="componentTableStepsHeader" width="30%">XXXXXX</th>
+                        <th class="componentTableStepsHeader" width="37%">XXXXXXXXXX</th>
+                        <th class="componentTableStepsHeader" width="10%">XXXXXXX</th>
+                        <th class="componentTableStepsHeader" width="12%">XXXXXXXXX</th>
                     </tr>
                     <tr id="tableData" ng-repeat="x in names">
                         <td class="componentTableCell">{{ x.scriptID }}</td>
