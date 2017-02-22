@@ -19,6 +19,8 @@ app.controller("controller", function($scope, $http) {
     $scope.GetSelectedCountry = function() {
         if ($scope.country) {
             $scope.states = $scope.country.States;
+            $scope.state = '';
+            $scope.cities = [];
         } else {
             $scope.states = [];
         }
@@ -32,11 +34,11 @@ app.controller("controller", function($scope, $http) {
     };
     $scope.retrieve = function() {
             var inserturl = '/retrieve';
-            console.log('country : ' + JSON.stringify($scope.country.name) + '  state :  ' + JSON.stringify($scope.state.name) + ' city: ' + $scope.city);
+            // console.log('country : ' + JSON.stringify($scope.country.name) + '  state :  ' + JSON.stringify($scope.state.name) + ' city: ' + $scope.city);
             $scope.formData = {
-                country: $scope.country.name,
-                state: $scope.state.name,
-                city: $scope.city
+                country: $scope.country ? $scope.country.name : '',
+                state: $scope.state ? $scope.state.name : '',
+                city: $scope.city ? $scope.city : ''
             };
             $http.post(inserturl, $scope.formData)
                 .success(function(response) {

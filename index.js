@@ -58,7 +58,17 @@ app.post('/retrieve', function(request, response) {
             console.log(err);
             throw err;
         }
-        var document1 = db.collection('scriptData').find({ $and: [{ "country": country }, { "state": state }, { "city": city }] });
+        var document1;
+        if (country != '' && state === '' && city === '') {
+            console.log('if...');
+            document1 = db.collection('scriptData').find({ "country": country });
+        } else if (country != '' && state != '' && city === '') {
+            console.log('else if...');
+            document1 = db.collection('scriptData').find({ $and: [{ "country": country }, { "state": state }] });
+        } else {
+            console.log(' else...');
+            document1 = db.collection('scriptData').find({ $and: [{ "country": country }, { "state": state }, { "city": city }] });
+        }
         var responseData = [];
         document1.each(function(err, doc) {
             if (doc != null) {

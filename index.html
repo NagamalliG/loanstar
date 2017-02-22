@@ -44,7 +44,7 @@
                     <div class="col-sm-3" width="20%">
                         <div>
                             <label class="control-label">States:</label>
-                            <select class='selectid' id="state" ng-disabled="states.length === 0" ng-model="state" ng-options="state.name for state in states track by state.id" ng-change="GetSelectedState()">
+                            <select class='selectid' id="state" ng-disabled="country.length === 0 && states.length === 0" ng-model="state" ng-options="state.name for state in states track by state.id" ng-change="GetSelectedState()">
                                 <option value=''>-Select State-</option>
                             </select>
                         </div>
