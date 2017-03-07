@@ -83,3 +83,63 @@ app.post('/retrieve', function(request, response) {
 });
 var server = app.listen(2017);
 console.log("server started with port 2017..");
+/**
+ * logdetails data..
+ */
+/** 
+ * {
+        "_id" : 1,
+        "country" : "Australia",
+        "state" : "New South Wales",
+        "city" : "Sydney",
+        "scriptID" : "100",
+        "scriptName" : "getdata",
+        "scriptDescription" : "get data from db",
+        "executionResults" : "success",
+        "executionDuration" : "10min"
+}
+{
+        "_id" : 2,
+        "country" : "Australia",
+        "state" : "New South Wales",
+        "city" : "Sydney",
+        "scriptID" : "100",
+        "scriptName" : "hello",
+        "scriptDescription" : "h r u ",
+        "executionResults" : "falied",
+        "executionDuration" : "20min"
+}
+{
+        "_id" : 3,
+        "country" : "Australia",
+        "state" : "New South Wales",
+        "city" : "Sydney",
+        "scriptID" : "100",
+        "scriptName" : "wt r u doing",
+        "scriptDescription" : "nothing",
+        "executionResults" : "success",
+        "executionDuration" : "10min"
+}
+{
+        "_id" : 4,
+        "country" : "India",
+        "state" : "Maharashtra",
+        "city" : "Pune",
+        "scriptID" : "1003",
+        "scriptName" : "who r u",
+        "scriptDescription" : "naga",
+        "executionResults" : "success",
+        "executionDuration" : "10min"
+}
+{
+        "_id" : 5,
+        "country" : "India",
+        "state" : "Maharashtra",
+        "city" : "Pune",
+        "scriptID" : "1004",
+        "scriptName" : "who r u",
+        "scriptDescription" : "naga",
+        "executionResults" : "success",
+        "executionDuration" : "10min"
+}
+*/
